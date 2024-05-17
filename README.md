@@ -2,91 +2,21 @@
 
 QuizMaster is a platform where users can take quizzes to test their knowledge and track their progress. Administrators can manage quizzes and users.
 
-## Project Structure
-
-quizmaster-app/
-├── backend/
-│ ├── src/
-│ │ ├── controllers/
-│ │ │ ├── quizController.ts
-│ │ │ ├── userController.ts
-│ │ │ └── authController.ts
-│ │ ├── models/
-│ │ │ ├── quizModel.ts
-│ │ │ ├── userModel.ts
-│ │ │ └── index.ts
-│ │ ├── routes/
-│ │ │ ├── quizRoutes.ts
-│ │ │ ├── userRoutes.ts
-│ │ │ └── authRoutes.ts
-│ │ ├── middlewares/
-│ │ │ ├── authMiddleware.ts
-│ │ │ └── errorMiddleware.ts
-│ │ ├── utils/
-│ │ │ ├── database.ts
-│ │ │ ├── logger.ts
-│ │ │ └── constants.ts
-│ │ ├── app.ts
-│ │ └── server.ts
-│ ├── package.json
-│ ├── tsconfig.json
-│ ├── .env
-│ └── .gitignore
-│
-└── frontend/
-├── public/
-│ ├── index.html
-│ └── favicon.ico
-│
-├── src/
-│ ├── assets/
-│ │ └── images/
-│ │
-│ ├── components/
-│ │ ├── Button.tsx
-│ │ ├── Card.tsx
-│ │ ├── Footer.tsx
-│ │ ├── Header.tsx
-│ │ ├── Layout.tsx
-│ │ └── (Other reusable components)
-│ │
-│ ├── pages/
-│ │ ├── AdminDashboard.tsx
-│ │ ├── LandingPage.tsx
-│ │ ├── LoginPage.tsx
-│ │ ├── QuizPage.tsx
-│ │ └── UserDashboard.tsx
-│ │
-│ ├── routes/
-│ │ └── AppRoutes.tsx
-│ │
-│ ├── styles/
-│ │ ├── variables.css
-│ │ └── global.css
-│ │
-│ ├── utils/
-│ │ ├── api.ts
-│ │ ├── constants.ts
-│ │ └── helpers.ts
-│ │
-│ ├── App.tsx
-│ ├── index.tsx
-│ ├── react-app-env.d.ts
-│ ├── serviceWorker.ts
-│ └── setupTests.ts
-│
-├── .gitignore
-├── package.json
-├── README.md
-└── tsconfig.json
-
-
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js and npm installed. You can download them from [nodejs.org](https://nodejs.org/).
-- MongoDB Atlas account. You can sign up at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas).
+### Prerequisites
+
+- **Node.js and npm**: You can download and install Node.js (which includes npm) from [nodejs.org](https://nodejs.org/). Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm is the package manager for Node.js.
+
+- **MongoDB Atlas account**: MongoDB Atlas is a cloud-hosted MongoDB service. You can sign up for a free account at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas) and create a cluster to store your application's data.
+
+- **React and TypeScript**: The frontend of this project is built using React, a JavaScript library for building user interfaces, and TypeScript, a typed superset of JavaScript. You can learn more about React at [reactjs.org](https://reactjs.org/) and TypeScript at [typescriptlang.org](https://www.typescriptlang.org/).
+
+- **Tailwind CSS**: Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces. You can learn more and find the documentation at [tailwindcss.com](https://tailwindcss.com/).
+
+- **Express**: Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications. You can learn more about Express at [expressjs.com](https://expressjs.com/).
 
 ### Setting Up the Backend
 
@@ -112,7 +42,7 @@ quizmaster-app/
 4. Start the backend server:
 
     ```sh
-    npm start
+    npm run serve
     ```
 
 ### Setting Up the Frontend
@@ -132,7 +62,7 @@ quizmaster-app/
 3. Start the frontend development server:
 
     ```sh
-    npm start
+    npm run front
     ```
 
 ### Running Both Servers Simultaneously
