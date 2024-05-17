@@ -6,8 +6,6 @@ QuizMaster is a platform where users can take quizzes to test their knowledge an
 
 ### Prerequisites
 
-### Prerequisites
-
 - **Node.js and npm**: You can download and install Node.js (which includes npm) from [nodejs.org](https://nodejs.org/). Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm is the package manager for Node.js.
 
 - **MongoDB Atlas account**: MongoDB Atlas is a cloud-hosted MongoDB service. You can sign up for a free account at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas) and create a cluster to store your application's data.
@@ -80,7 +78,7 @@ In the root directory of the project, you can run both the backend and frontend 
 
     ```json
     "scripts": {
-      "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\""
+      "start": "concurrently \"npm run serve --prefix backend\" \"npm run front --prefix frontend\""
     }
     ```
 

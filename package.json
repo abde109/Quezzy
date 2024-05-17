@@ -2,7 +2,7 @@
   "name": "quizmaster-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"npm run start --prefix backend\" \"npm run start --prefix frontend\""
+    "start": "concurrently \"npm run serve --prefix backend\" \"npm run front --prefix frontend\""
   },
   "devDependencies": {
     "concurrently": "^6.2.1"
