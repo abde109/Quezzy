@@ -9,7 +9,7 @@ import RegisterPage from './pages/RegisterPage';
 const App: React.FC = () => {
   return (
     <Router>
-      <>
+      <div className='flex flex-col h-screen'>
       <Header />
         <Routes>
           <Route path="/login" element={<LoginPage />} />
@@ -17,7 +17,7 @@ const App: React.FC = () => {
           <Route path="/Quizzes" element={<QuizzesPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Routes>
-      </>
+      </div>
     </Router>
   );
 }
