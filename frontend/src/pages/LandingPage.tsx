@@ -1,10 +1,20 @@
-import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
     return (
-        <div className='bg-background  bg-opacity-25'>
-            <h1>Landing Page 1</h1>
-            <Link to='/login'></Link>
+        <div className='bg-background  bg-opacity-25 h-full'>
+            <div className='flex flex-row'>
+                <div className="border-2 w-1/2 flex flex-col items-center">
+                <h1 className="text-4xl font-sans w-1/2">
+                    Unlock Your Learning Potential with Quezzy for Education
+                </h1>
+                </div>
+                <>
+                <h1 className="text-2xl">
+                    Unlock Your Learning Potential with Quezzy for Education
+                </h1>
+                </>
+
+            </div>
         </div>
     );
 }
