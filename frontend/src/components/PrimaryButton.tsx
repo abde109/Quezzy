@@ -4,10 +4,10 @@ const PrimaryButton: React.FC<{label:string ; w?:string ; h?:string ; to:string 
     const nav = useNav();
     return (
         <button 
-            className={`bg-primary text-white py-2 px-4 rounded hover:shadow hover:shadow-slate-400 hover:scale-105 w-${w} py-${h} ${className}`}
+            className={`bg-primary text-white md:py-2 md:px-4 px-4 py-2 rounded hover:shadow hover:shadow-slate-400 hover:scale-105 px-${w} py-${h} ${className}`}
             onClick={() => nav(to) } 
         >
-            {label}
+            <span className="md:text-base text-md">{label}</span>
         </button>
     );
 };
