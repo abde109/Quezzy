@@ -37,7 +37,26 @@ module.exports = {
 
       width: {
         '120': '30rem',
+        '140': '45rem',
       },
+
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-40px)' },
+        },
+
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+
+      },
+      animation: {
+        float: 'float 4s ease-in-out infinite',
+        fadeInUp: 'fadeInUp 2.5s ease-out forwards',
+      },
+
     },
   },
   plugins: [],
