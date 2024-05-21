@@ -28,7 +28,7 @@ const ProfileMenu = () => {
     return (
         <>  
             {!isLogin ? 
-            (<> <PrimaryButton label='Sign in' size='100' to='login'/> <SecandButton label='Sign up' size = '100' to='register'/></>) :
+            (<> <PrimaryButton className='mx-4' label='Sign in' to='login'/> <SecandButton label='Sign up' to='register'/></>) :
             (<> 
                 <Avatar ref={avatarRef} sx={{ width: 40, height: 40 }} onClick = {()=>{ setHandlerMenu(!handlerMenu) }} className='cursor-pointer'/> 
                 {

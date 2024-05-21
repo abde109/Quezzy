@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         primary: '#DB0940',
         background: '#D9D9D9',
+        input: '#EDF2F7',
         accent: '#FFC107',
         neutral: '#333333',
       },
@@ -32,6 +33,10 @@ module.exports = {
   
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
+      },
+
+      width: {
+        '120': '30rem',
       },
     },
   },
