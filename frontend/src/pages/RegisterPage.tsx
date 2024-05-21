@@ -90,9 +90,9 @@ const RegisterPage = () => {
                             <input 
                                 type="password"
                                 id="Repeat_password"
-                                name="password"
+                                name="Repeat_password"
                                 placeholder="Repeat Password"
-                                autoComplete="password"
+                                autoComplete="Repeat_password"
                                 required
                                 className="flex w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input " 
                             />
