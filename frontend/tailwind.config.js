@@ -5,19 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: '#DB0940',
-        background: '#D9D9D9',
-        input: '#EDF2F7',
-        accent: '#FFC107',
-        neutral: '#333333',
-      },
-      fontFamily: {
-        sans: ['Rubik', 'sans-serif'],
-        mono: ['Source Code Pro', 'monospace'],
-        sketch: ['Cabin Sketch', 'cursive'],
-      },
-     
       screens: {
         'sm': '640px',
         // => @media (min-width: 640px) { ... }
@@ -34,6 +21,20 @@ module.exports = {
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
       },
+      
+      colors: {
+        primary: '#DB0940',
+        background: '#D9D9D9',
+        input: '#EDF2F7',
+        accent: '#FFC107',
+        neutral: '#333333',
+      },
+      fontFamily: {
+        sans: ['Rubik', 'sans-serif'],
+        mono: ['Source Code Pro', 'monospace'],
+        sketch: ['Cabin Sketch', 'cursive'],
+      },
+     
 
       width: {
         '120': '30rem',
