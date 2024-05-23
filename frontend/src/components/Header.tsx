@@ -8,7 +8,7 @@ import ProfileMenu from './ProfileMenu';
 const Header: React.FC = () => {
   const nav = useNav();
   return (
-    <header className="sticky top-0 z-50 flex justify-between border-b border-t-slate-600 bg-white bg-opacity-85 backdrop-blur-md">
+    <header className="fixed w-full top-0 z-50 flex justify-between border-b border-t-slate-600 bg-white bg-opacity-80 backdrop-blur-md">
       <h1 className="font-sans font-bold ml-5 md:ml-20 mt-5 mb-5 text-3xl"><span className="text-primary ">Que</span>zzy</h1>
       <nav className="flex items-center">
         <div className='hidden lg:block'>

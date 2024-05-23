@@ -102,7 +102,7 @@ const RegisterPage = () => {
                     </div>
 
                     <div className='flex flex-col items-center'>
-                        <PrimaryButton label="Register New Account" w={'120'} h={'4'} to={''} className='mb-12'/>
+                        <PrimaryButton label="Register New Account" w='' h={'4'} to={''} className='mb-12 w-full'/>
                         <Link className='text-gray-600 mb-10 text-sm hover:text-gray-800' to={'/login'}>
                             Already have an account?
                         </Link>
