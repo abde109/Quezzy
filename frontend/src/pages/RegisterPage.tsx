@@ -7,33 +7,31 @@ import PrimaryButton from '../components/PrimaryButton';
 
 const RegisterPage = () => {
     return (
-        <div className="relative flex flex-col justify-center items-center h-screen bg-background bg-opacity-25 ">
+        <div className="relative flex flex-col justify-center items-center min-h-screen bg-background bg-opacity-25 ">
             <div
-                className="absolute inset-0  bg-center"
+                className="absolute inset-0 bg-center bg-cover bg-no-repeat"
                 style={{ backgroundImage: `url(${backgroundImage})`, opacity: 0.3 }}
             ></div>
             <div className='relative'>
             
-            <div className="border px-10 py-20 bg-white rounded-lg flex flex-col items-center">
+            <div className="border px-6 py-8 bg-white rounded-lg flex flex-col items-center w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto">
                 {/* <h1 className="text-5xl font-semibold mb-12">
                     <span className="text-primary">Que</span>zzy
                 </h1> */}
 
-                <h2 className="text-2xl font-mono font-bold text-primary">
+                <h2 className="text-2xl font-mono font-bold text-primary mb-4 sm:text-3xl md:text-4xl">
                 Register
-                </h2>
-
-                <h4 className='text-gray-600 mb-10'>
+                </h2>   
+                <h4 className="text-gray-600 mb-6 text-base sm:text-lg md:text-xl">
                 Create Account
                 </h4>
-
                 <form action="#" method="post" className="">
 
 
-                <div className='mb-6 mt-6'>
+                <div className='mb-4'>
                         {/* <label htmlFor="email" className="opacity-30">Email address</label> */}
                         <div className="relative">
-                        <AccountCircleOutlinedIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" sx={{width:20 , height:20}}/>
+                        <VpnKeyOutlinedIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" sx={{ width: 20, height: 20 }}/>
                             <input 
                                 type="username"
                                 id="username"
@@ -41,7 +39,7 @@ const RegisterPage = () => {
                                 placeholder="username"
                                 autoComplete="username"
                                 required
-                                className="flex w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input " 
+                                className="w-full md:w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input" 
                             />
                             
                         </div>
@@ -59,7 +57,7 @@ const RegisterPage = () => {
                                 placeholder="Email address"
                                 autoComplete="email"
                                 required
-                                className="flex w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input " 
+                                className="w-full md:w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input"  
                             />
                             
                         </div>
@@ -76,7 +74,7 @@ const RegisterPage = () => {
                                 placeholder="Password"
                                 autoComplete="password"
                                 required
-                                className="flex w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input " 
+                                className="w-full md:w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input"  
                             />
                           
                             
@@ -94,7 +92,7 @@ const RegisterPage = () => {
                                 placeholder="Repeat Password"
                                 autoComplete="Repeat_password"
                                 required
-                                className="flex w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input " 
+                                className="w-full md:w-120 px-10 py-3 border border-gray-300 border-opacity-40 rounded-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary bg-input" 
                             />
                           
                             
