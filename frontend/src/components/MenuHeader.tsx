@@ -2,7 +2,7 @@
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleMenu } from '../store/menuSlice';
+import { toggleMenu } from '../store/features/menuSlice';
 import Menu from './Menu';
 
 const MenuHeader = () => {

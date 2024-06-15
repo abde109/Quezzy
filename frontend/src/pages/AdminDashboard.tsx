@@ -1,7 +1,12 @@
+import ListedQuiz from "./ListedQuiz";
+
 const AdminDashboard = () => {
   return (
     <div>
-      <h1>Admin Dashboard</h1>
+      {/* <ListQuiz /> */}
+      <h1>admin</h1>
+      <ListedQuiz />
+
     </div>
   );
 }

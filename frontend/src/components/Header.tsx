@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-
+import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { useNav } from '../utils/helpers';
-import ProfileMenu from './ProfileMenu';
 import DropdownMenu from './DropdownMenu';
+import ProfileMenu from './ProfileMenu';
 
 const Header: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const nav = useNav();
+  const location = useLocation();
+  const userState = useSelector((state: any) => state.user);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -23,17 +26,41 @@ const Header: React.FC = () => {
     closeDropdown(); // Close the dropdown when a navigation item is clicked
   };
 
+  const handleHeader = () => {
+    
+    
+    if (location.pathname.startsWith('/dashboard') || location.pathname.startsWith('/list')) {
+      if (userState.role === 'admin') {
+        return (
+          <ul className='flex space-x-5 cursor-pointer font-bold'>
+            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('list')}>List Quiz</li>
+            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('listed')}> Listed Quiz </li>
+          </ul>
+        )
+      } else {
+        <ul className='flex space-x-5 cursor-pointer font-bold'>
+          <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('current')}>Current Quiz</li>
+          <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('previews')}> Previews Quiz </li>
+        </ul>
+      }
+    }
+     
+    return (
+      <ul className='flex space-x-5 cursor-pointer font-bold'>
+            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('/')}>Home</li>
+            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('Quizzes')}> Quizzes </li>
+            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('Leaderboards')}>Leaderboards</li>
+          </ul>
+    )
+  }
+
   return (
     <>
       {/* Desktop Navigation */}
       <header className="sticky top-0 z-50 flex justify-between border-b border-t-slate-600 bg-white bg-opacity-85 backdrop-blur-md hidden md:flex">
         <h1 className="font-sans font-bold ml-5 md:ml-20 mt-5 mb-5 text-3xl"><span className="text-primary ">Que</span>zzy</h1>
         <nav className="flex items-center">
-          <ul className='flex space-x-5 cursor-pointer font-bold'>
-            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('/')}>Home</li>
-            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('Quizzes')}> Quizzes </li>
-            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('Leaderboards')}>Leaderboards</li>
-          </ul>
+          {handleHeader()}
         </nav>
         <div className='flex place-self-center sm:mr-10 md:mr-20'>
           <ProfileMenu />
