@@ -1,12 +1,55 @@
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getUser } from '../api/userApi';
 import backgroundImage from '../assets/images/background.png';
 import PrimaryButton from '../components/PrimaryButton';
 import SecandButton from '../components/SecandButton';
+import { useAppDispatch } from '../store';
+import { initializeUser } from '../store/features/userSlice';
+import { useNav } from '../utils/helpers';
 
 
 const LoginPage = () => {
+    
+    const navigate = useNav();
+    const [errorEmail, setErrorEmail] = useState('');
+    const [errorPassword, setErrorPassword] = useState('');
+    const dispatch = useAppDispatch();
+
+      
+    const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+            setErrorEmail('');
+           setErrorPassword('');
+      
+          const formData = new FormData(e.target as HTMLFormElement);
+          const email = formData.get('email');
+          const password = formData.get('password');
+      
+          const datauser = {
+            email,
+            password
+          };
+      
+          try {
+                const user = await getUser(datauser);
+                navigate('/');
+                dispatch(initializeUser(user));
+                // const auth = await authUser()
+                // console.log(auth)
+            
+          } catch (err: any) {
+            const errMessage = await JSON.parse(err.request.response).message;
+            if(errMessage.email){
+                setErrorEmail(errMessage.email)
+            }else if(errMessage.password){
+                setErrorPassword(errMessage.password)
+            }
+            
+        };
+    }
 
     
 
@@ -30,8 +73,7 @@ const LoginPage = () => {
                 <h4 className='text-gray-600 mb-10'>
                 Sign in to your account
                 </h4>
-
-                <form action="#" method="post" className="">
+                <form onSubmit={handleLogin} id="loginForm" method="post" className="">
                     <div className='mb-6 mt-6'>
                         {/* <label htmlFor="email" className="opacity-30">Email address</label> */}
                         <div className="relative">
@@ -47,6 +89,7 @@ const LoginPage = () => {
                             />
                             
                         </div>
+                        <span className='text-xs text-primary'>{errorEmail}</span>
                     </div>
 
                     <div className='mb-6'>
@@ -65,6 +108,7 @@ const LoginPage = () => {
                           
                             
                         </div>
+                        <span className='text-xs text-primary'>{errorPassword}</span>
                     </div>
                     <div className='flex flex-col justify-center'>
                         <PrimaryButton label="Login" w={'120'} h={'4'} to={''} className='mb-4'/>

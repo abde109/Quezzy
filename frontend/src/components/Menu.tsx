@@ -1,6 +1,6 @@
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import { useDispatch } from 'react-redux';
-import { toggleMenu } from '../store/menuSlice';
+import { toggleMenu } from '../store/features/menuSlice';
 import { useNav } from '../utils/helpers';
 import ProfileMenu from './ProfileMenu';
 

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNav } from '../utils/helpers';
-import MenuIcon from '@mui/icons-material/Menu';
 import ProfileMenu from './ProfileMenu';
 
 import CloseIcon from '@mui/icons-material/Close';

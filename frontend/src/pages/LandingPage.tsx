@@ -43,9 +43,9 @@ const LandingPage = () => {
 
     return (
         <>
-            <section className='bg-background bg-opacity-25 pb-8 md:pb-16 lg:pb-32'>
+            <section className='bg-background bg-opacity-25 pb-8 md:pb-16 lg:pb-72'>
                 <div className='flex flex-col md:flex-row mt-8 md:mt-10 lg:mt-20'>
-                    <div className="md:w-1/2 flex justify-center mt-0 md:mt-8 lg:mt-16">
+                    <div className="md:w-1/2 flex justify-center mt-0 md:mt-8 lg:mt-16 lg:ml-24">
                         <div className="w-full px-4 md:px-8 lg:px-12">
                             <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold animate-fadeInUp">
                                 Unlock Your Professional and Educational Potential with <span className="text-primary">Que</span>zzy
@@ -68,8 +68,8 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            <section className="bg-background bg-opacity-60 py-8 md:py-16 lg:py-24">
-                <div className='flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-40 md:p-8'>
+            <section className="bg-background bg-opacity-60 py-8 md:py-16 lg:py-2">
+                <div className='flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-40 md:p-8 lg:-translate-y-1/2 lg:transform lg:left-1/2'>
                     {listcard.map((card, index) => (
                         <RedCard
                             title={card.title}
@@ -80,8 +80,8 @@ const LandingPage = () => {
                     ))}
                 </div>
 
-                <div className='flex flex-col md:flex-row mt-8 md:mt-16 lg:mt-20 py-20 md:py-8 lg:py-10 pb-8 md:pb-10 lg:pb-12'>
-                    <div className='relative w-full md:w-1/2'>
+                <div className='flex flex-col md:flex-row md:mt-16 py-20 md:py-8 pb-8 md:pb-10 lg:pb-12'>
+                    <div className='relative md:w-1/2 mb-20 mt-10'>
                         <div className='grid grid-rows-2 h-full px-6 md:px-10 lg:px-20'>
                             <div className='bg-primary w-24 h-24 md:w-40 md:h-40 rounded-lg self-start'></div>
                             <div className='bg-primary w-24 h-24 md:w-40 md:h-40 rounded-lg self-end justify-self-end'></div>
@@ -89,13 +89,14 @@ const LandingPage = () => {
                         <div className='absolute inset-0 flex justify-center items-center mt-6 md:mt-8 lg:mt-10 pt-6 md:pt-8 lg:pt-10'>
                             <img
                                 src={image_2}
-                                alt="Circular content"
-                                className="h-64 w-64 object-cover sm:h-full sm:w-full lg:h-full lg:w-full animate-float lg:pl-4"
+                                alt="image_2"
+                                className="h-96 w-auto lg:z-10 lg:object-cover object-cover sm:h-auto sm:max-w-auto lg:h-auto lg:w-auto animate-float lg:pl-4"
+                                // className="lg:z-10 lg:object-cover animate-float"
                             />
                         </div>
                     </div>
 
-                    <div className='text-lg md:text-2xl lg:text-4xl font-bold font-mono mb-4 px-4 md:px-10 lg:px-20 py-8'>
+                    <div className='text-lg md:text-2xl lg:text-4xl font-mono mb-4 px-4 md:px-10 lg:px-20 py-8'>
                         <h2 className=' text-4xl  md:text-xl lg:text-2xl font-bold font-mono mb-2 pt-16 lg:mb-6 px-4 lg:px-10 text-center md:text-left'>
                             Simplify your learning experience with <span className='text-primary'>Que</span>zzy
                         </h2>
@@ -103,7 +104,7 @@ const LandingPage = () => {
                             Discover new horizons in education. The world of knowledge awaits; seize its opportunities now!
                         </p>
                         {listToggleP.map((item, index) => (
-                            <ToggleP title={item.title} description={item.description} key={index} />
+                            <ToggleP title={item.title} description={item.description} key={index} py={10}/>
                         ))}
                     </div>
                 </div>
