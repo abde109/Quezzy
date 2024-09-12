@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage';
 import NotFound from './pages/NotFound';
 import QuizzesPage from './pages/QuizzesPage';
 import RegisterPage from './pages/RegisterPage';
+import Settings from './pages/Settings';
 import UserDashboard from './pages/UserDashboard';
 import { useAppDispatch } from './store';
 import { initializeUser } from './store/features/userSlice';
@@ -52,6 +53,7 @@ const App: React.FC = () => {
           <Route path="/list/:quizId" element={userState.role === "user" ? <NotFound /> : <ListQuiz />} />
           <Route path="/listed" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
           <Route path="/listed/:quizId" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
+          <Route path="/settings" element={userState.role === "user" ? <NotFound /> : <Settings />} />
         </Routes>
       </div>
     </Router>

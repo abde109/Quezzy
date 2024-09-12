@@ -6,6 +6,7 @@ import express from 'express';
 import session from 'express-session';
 import questionRoutes from './routes/questionRoutes';
 import quizRoutes from './routes/quizRoutes';
+import settingsRoutes from './routes/settingsRoute';
 import userRoutes from './routes/userRoutes';
 import connectDB from './utils/database';
 
@@ -26,7 +27,8 @@ app.use(cors({
 app.use(session({
     secret: process.env.SESSION_SECRET as string,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }), // Uncomment if using MongoDB for sessions
     cookie: {
         secure: false, // Set to true if using HTTPS
@@ -40,6 +42,7 @@ app.use(urlencoded({ extended: true }));
 
 app.use('/api/users', userRoutes);
 app.use('/api/quizzes', quizRoutes);
-app.use('/api/question' , questionRoutes)
+app.use('/api/question', questionRoutes)
+app.use('/api/settings' , settingsRoutes)
 
 export default app;
