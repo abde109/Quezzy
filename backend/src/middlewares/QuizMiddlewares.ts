@@ -10,7 +10,7 @@ export const checkAndUpdateQuiz = async (req: Request, res: Response, next: Next
     const existingQuiz: any = await quizService.getBy({ title });
 
     if (existingQuiz) {
-      const updatedQuiz = await quizService.update(existingQuiz._id, req.body);
+      const updatedQuiz = await quizService.update(existingQuiz._id, req.body,req );
       return res.status(200).json(updatedQuiz);
     } else {
       next();

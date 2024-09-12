@@ -1,7 +1,8 @@
 const QuizPage = () => {
     return (
         <div>
-            <h1>Quiz Page</h1>
+            <h1>ff</h1>
+            <input></input>
         </div>
     );
 };
