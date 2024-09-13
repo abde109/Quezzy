@@ -18,6 +18,7 @@ const QuestionCard = ({ question }: { question: IQuestion }) => {
       <div className='relative w-full'>
         <div className="border px-6 py-8 bg-white rounded-lg w-full">
           <h1 className="text-3xl mb-4">{question.content}</h1>
+          <div className='bg-gray-200 px-4 py-6  rounded-lg'>
           {question.imageUrl && <img src={question.imageUrl} alt="Question" className="mb-4" />}
           <ul>
             {question.options.map((option) => (
@@ -31,22 +32,23 @@ const QuestionCard = ({ question }: { question: IQuestion }) => {
               </li>
             ))}
           </ul>
-          <div className="flex justify-end mt-4">
+          <div className="absolute top-0 right-0 m-4">
             <button
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+              className="text-sm px-5 underline text-gray-500 hover:text-gray-700 cursor-pointer"
               onClick={handleEdit}
             >
               Edit
             </button>
             <button
-              className="bg-red-500 text-white px-4 py-2 rounded"
+              className="text-sm underline text-gray-500 hover:text-gray-700 cursor-pointer"
               onClick={handleDelete}
             >
               Delete
             </button>
           </div>
         </div>
-        <div className='absolute -inset-2 border-r-8 border-b-8 border-primary rounded-lg top-2 left-2 pointer-events-none'></div>
+          <div className='absolute -inset-2 border-r-8 border-b-8 border-primary rounded-lg top-2 left-2 pointer-events-none'></div>
+          </div>
       </div>
     </div>
   );

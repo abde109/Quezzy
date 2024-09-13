@@ -1,5 +1,15 @@
 // CRUDService.ts
+import { Request } from 'express';
 import { Document, FilterQuery, Model } from 'mongoose';
+
+
+import 'express-session';
+
+declare module 'express-session' {
+  interface Session {
+    user?: any; // Define your custom session data type here
+  }
+}
 
 class CRUDService<T extends Document> {
   private model: Model<T>;
@@ -55,15 +65,41 @@ class CRUDService<T extends Document> {
   }
   
   
-  async update(id: string, data: Partial<T>): Promise<T | null> {
-    try {
-      const item = await this.model.findByIdAndUpdate(id, data, { new: true, runValidators: true });
-      if (!item) throw new Error('Item not found');
-      return item;
-    } catch (err) {
-      throw new Error('Error updating item');
+async update(id: string, data: Partial<T>, req: Request): Promise<T | null> {
+  try {
+    console.log('Updating item with data:', data);
+
+    // Update the item in the database and return the updated item
+    const item = await this.model.findByIdAndUpdate(id, data, { new: true, runValidators: true });
+
+    if (!item) {
+      console.log('Item not found:', id);
+      throw new Error('Item not found');
     }
+
+    // Log the item updated from the database
+    console.log('Item updated in DB:', item);
+
+    // Update session with the new item data
+    req.session.user = item;
+    
+    // Log the session before saving to verify
+    console.log('Session before saving:', req.session);
+
+    // Save the session
+    // await req.session.save();
+
+    // Log the session after saving
+    console.log('Session after saving:', req.session);
+
+    return item;
+  } catch (err) {
+    console.log('Error updating item:', err);
+    throw new Error('Error updating item');
   }
+}
+
+
 
   async delete(id: string): Promise<T | null> {
     try {
