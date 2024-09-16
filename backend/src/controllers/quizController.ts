@@ -24,6 +24,15 @@ export const deleteQuizs = async (req: Request, res: Response) => {
       }
 }
 
+export const deleteQuizById = async (req: Request, res: Response) => { 
+      try {
+            const quiz = await quizService.delete(req.params.id);
+            res.status(200).json(quiz);
+      }catch(err:any) {
+            res.status(500).json({ error: err.message });
+      }
+}
+
 export const getQuizs = async (req: Request, res: Response) => {
       try {
             const quizs = await quizService.getAll();

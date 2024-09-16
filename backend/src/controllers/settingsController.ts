@@ -7,9 +7,11 @@ const userService = new CRUDService(User);
 export const getSettings = async (req:Request, res:Response) => {
 
     try {
-        const user = (req.session as any).user;
+        const user = await userService.getById(req.session.user.userID);
         
         if (user) {
+            console.log('User authenticated:', user);
+            
           return res.status(200).json({ message: 'Authenticated' , user: user });
         } else {
             return res.status(403).json({ message: 'User not Authenticated' });
@@ -21,12 +23,13 @@ export const getSettings = async (req:Request, res:Response) => {
 };
 
 export const updateSettings = async (req: Request, res: Response) => {
-      // console.log("fdfffffffffffffffffff");
+      
       try {
             const user = (req.session as any).user;
             if (!user) {
                   return res.status(403).json({ message: 'User not Authenticated' });
             }
+            // console.log(req.body);
             
             await userService.update(req.body.userID, req.body, req);
             req.session.user = req.body;  // Update session data with the updated item
