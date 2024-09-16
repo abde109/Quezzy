@@ -68,13 +68,13 @@ const LandingPage = () => {
                     {/* Left Section */}
                     <div className="md:w-1/2 flex justify-center mt-0 md:mt-8 lg:mt-16 lg:ml-24">
                         <div className="w-full px-4 md:px-8 lg:px-12">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold animate-fadeInUp leading-tight">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold leading-tight">
                                 Unlock Your Professional and Educational Potential with <span className="text-primary">Que</span>zzy
                             </h1>
-                            <p className="text-sm md:text-base font-mono font-normal mt-4 mb-6 md:mb-10 lg:mb-12 w-full md:w-2/3 animate-fadeInUp leading-relaxed">
+                            <p className="text-sm md:text-base font-mono font-normal mt-4 mb-6 md:mb-10 lg:mb-12 w-full md:w-2/3 leading-relaxed">
                                 Quezzy is a versatile tool for creating and managing quizzes and exams, ideal for educators, companies, and individuals preparing for job interviews or skill assessments.
                             </p>
-                            <PrimaryButton label={"Join Us"} to={""} w='10' h='2' className="animate-fadeInUp text-lg md:text-xl lg:text-2xl" />
+                            <PrimaryButton label={"Join Us"} to={""} w='10' h='2' className="text-lg md:text-xl lg:text-2xl" />
                         </div>
                     </div>
                     {/* Right Section */}
@@ -83,17 +83,15 @@ const LandingPage = () => {
                             <img
                                 src={image_1}
                                 alt="Circular content"
-                                className="max-w-xs max-h-xs md:max-w-sm md:max-h-sm lg:max-w-md lg:max-h-md xl:max-w-lg xl:max-h-lg mx-auto animate-float"
+                                className="max-w-xs max-h-xs md:max-w-sm md:max-h-sm lg:max-w-md lg:max-h-md xl:max-w-lg xl:max-h-lg mx-auto"
                             />
                         </div>
                     </div>
                 </div>
-                
             </section>
-            
+
             <section className="bg-background bg-opacity-60 py-4 md:py-8 lg:py-20">
                 {/* Cards Section */}
-                
                 <div className='flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-40 md:p-8 lg:-translate-y-1/2 lg:transform lg:left-1/2'>
                     {listcard.map((card, index) => (
                         <RedCard
@@ -104,26 +102,26 @@ const LandingPage = () => {
                         />
                     ))}
                 </div>
-                
+
                 {/* Image Left - Text Right */}
-                <div className='flex flex-col md:flex-row items-center justify-center md:py-0 mt-0 md:mt-0 py-4'>
+                <div className='flex flex-col md:flex-row items-center justify-center py-6 md:py-6 lg:py-10'>
                     {/* Image on the left */}
-                    <div className='relative md:w-1/2 flex justify-center items-center mb-6 md:mb-0'>
-                        <div className='w-full h-full max-w-xs md:max-w-none'>
+                    <div className='md:w-1/2 flex justify-center mb-6 md:mb-0'>
+                        <div className='w-full max-w-xs md:max-w-none'>
                             <img
                                 src={image_3}
                                 alt="Educational Quiz Platform"
-                                className="h-64 md:h-96 w-auto lg:z-10 object-cover mx-auto"
+                                className="h-64 md:h-auto w-auto mx-auto object-cover"
                             />
                         </div>
                     </div>
 
                     {/* Text on the right */}
-                    <div className='text-sm md:text-base lg:text-lg font-serif mb-2 px-4 md:px-6 lg:px-8 flex flex-col justify-center items-center md:items-start md:w-1/2'>
+                    <div className='md:w-1/2 flex flex-col justify-center items-center md:items-start px-4 md:px-6 lg:px-8'>
                         <h1 className='text-lg md:text-xl lg:text-2xl font-bold mb-4 text-center md:text-left text-black'>
                             Elevate Your Learning with <span className='text-primary'>Que</span>zzy
                         </h1>
-                        <p className='px-2 md:px-4 lg:px-6 mb-4 lg:mb-6 text-center md:text-left text-black leading-relaxed'>
+                        <p className='mb-4 lg:mb-6 text-center md:text-left text-black leading-relaxed'>
                             Discover how Quezzy transforms education for teachers, students, companies, and candidates:
                         </p>
                         <div className='mt-4 space-y-3'>
@@ -138,11 +136,20 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </div>
-                
+
                 {/* Text Left - Image Right */}
                 <div className='flex flex-col md:flex-row items-center justify-center py-6 md:py-6 lg:py-10'>
+                <div className='md:w-1/2 flex justify-center'>
+                        <div className='w-full max-w-xs md:max-w-none'>
+                            <img
+                                src={image_2}
+                                alt="Educational Image"
+                                className="h-64 md:h-auto w-auto mx-auto object-cover"
+                            />
+                        </div>
+                    </div>
                     {/* Text on the left */}
-                    <div className='text-sm md:text-base lg:text-lg font-serif mb-4 px-4 md:px-6 lg:px-8 flex flex-col justify-center items-center md:items-start md:w-1/2'>
+                    <div className='md:w-1/2 flex flex-col justify-center items-center md:items-start px-4 md:px-6 lg:px-8 mb-6 md:mb-0'>
                         <h1 className='text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-center md:text-left text-black'>
                             Simplify your learning experience with <span className='text-primary'>Que</span>zzy
                         </h1>
@@ -162,15 +169,7 @@ const LandingPage = () => {
                     </div>
 
                     {/* Image on the right */}
-                    <div className='relative md:w-1/2 flex justify-center items-center mt-6 md:mt-0'>
-                        <div className='w-full h-full max-w-xs md:max-w-none'>
-                            <img
-                                src={image_2}
-                                alt="Educational Image"
-                                className="h-64 md:h-auto w-auto mx-auto object-cover"
-                            />
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <div>

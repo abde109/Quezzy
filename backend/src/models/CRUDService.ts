@@ -91,6 +91,7 @@ async update(id: string, data: Partial<T>, req: Request): Promise<T | null> {
 
     // Log the session after saving
     console.log('Session after saving:', req.session);
+    console.log('Session after saving:', req.body);
 
     return item;
   } catch (err) {
