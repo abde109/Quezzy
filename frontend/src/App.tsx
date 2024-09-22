@@ -17,6 +17,7 @@ import Settings from './pages/Settings';
 import UserDashboard from './pages/UserDashboard';
 import { useAppDispatch } from './store';
 import { initializeUser } from './store/features/userSlice';
+import Profile from './pages/Profile'
 
 const App: React.FC = () => {
 
@@ -54,7 +55,10 @@ const App: React.FC = () => {
           <Route path="/listed" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
           <Route path="/listed/:quizId" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
           <Route path="/settings" element={userState.role === "user" ? <NotFound /> : <Settings />} />
+          <Route path="/Profile" element={userState.role === "user" ? <NotFound /> : <Profile />} />
+
         </Routes>
+
       </div>
     </Router>
   );

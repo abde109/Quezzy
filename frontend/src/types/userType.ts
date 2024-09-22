@@ -25,20 +25,21 @@ export interface IUser {
 
   // Optional fields
 
-  about: '',            // Default value
-  skills: '',           // Default value
-  website: '',          // Default value
-  phoneNumber: '',      // Default value
-  quizzesCompleted: 0, // Default value
-  address: '',          // Default value
-  dateOfBirth: null,    // Default value
-  profilePicture: '',   // Default value
-  socialLinks: {
-    facebook: '',       // Default value
-    twitter: '',        // Default value
-    linkedin: ''        // Default value
-  },
-  preferences: {
-    language: 'en'      // Default value
-  }
-};
+  about?: string;            // Default value: ''
+  phoneNumber?: string;      // Default value: ''
+  website:string;
+  quizzesCompleted?: number; // Default value: 0
+  address?: string;          // Default value: ''
+  dateOfBirth?: string | null; // Default value: null
+  socialLinks?: {
+    facebook?: string;       // Default value: ''
+    twitter?: string;        // Default value: ''
+    linkedin?: string;       // Default value: ''
+  };
+  preferences?: {
+    language?: string;      // Default value: 'en'
+  };
+  level?: string;            // New optional field
+  contactNumber?: string;    // New optional field
+  membershipStatus?: string; // New optional field
+}
