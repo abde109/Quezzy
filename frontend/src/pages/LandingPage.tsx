@@ -11,6 +11,7 @@ import CardSection from '../components/CardSection';
 import Footer from '../components/Footer';
 import EmailCard from '../components/EmailCard';
 import QuizCategories from '../components/QuizCategories';
+import AppDownloadSection from '../components/AppDownloadSection';
 
 const LandingPage = () => {
     const listcard = [
@@ -90,7 +91,9 @@ const LandingPage = () => {
                 </div>
                 
             </section>
-            
+            <section>
+                
+            </section>
             <section className="bg-background bg-opacity-60 py-4 md:py-8 lg:py-20">
                 {/* Cards Section */}
                 
@@ -106,79 +109,87 @@ const LandingPage = () => {
                 </div>
                 
                 {/* Image Left - Text Right */}
-                <div className='flex flex-col md:flex-row items-center justify-center md:py-0 mt-0 md:mt-0 py-4'>
-                    {/* Image on the left */}
-                    <div className='relative md:w-1/2 flex justify-center items-center mb-6 md:mb-0'>
-                        <div className='w-full h-full max-w-xs md:max-w-none'>
-                            <img
-                                src={image_3}
-                                alt="Educational Quiz Platform"
-                                className="h-64 md:h-96 w-auto lg:z-10 object-cover mx-auto"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Text on the right */}
-                    <div className='text-sm md:text-base lg:text-lg font-serif mb-2 px-4 md:px-6 lg:px-8 flex flex-col justify-center items-center md:items-start md:w-1/2'>
-                        <h1 className='text-lg md:text-xl lg:text-2xl font-bold mb-4 text-center md:text-left text-black'>
-                            Elevate Your Learning with <span className='text-primary'>Que</span>zzy
-                        </h1>
-                        <p className='px-2 md:px-4 lg:px-6 mb-4 lg:mb-6 text-center md:text-left text-black leading-relaxed'>
-                            Discover how Quezzy transforms education for teachers, students, companies, and candidates:
-                        </p>
-                        <div className='mt-4 space-y-3'>
-                            {keyFeatures.map((feature, index) => (
-                                <ToggleP
-                                    title={feature.title}
-                                    description={feature.description}
-                                    key={index}
-                                    py={4}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                
-                {/* Text Left - Image Right */}
-                <div className='flex flex-col md:flex-row items-center justify-center py-6 md:py-6 lg:py-10'>
-                    {/* Text on the left */}
-                    <div className='text-sm md:text-base lg:text-lg font-serif mb-4 px-4 md:px-6 lg:px-8 flex flex-col justify-center items-center md:items-start md:w-1/2'>
-                        <h1 className='text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-center md:text-left text-black'>
-                            Simplify your learning experience with <span className='text-primary'>Que</span>zzy
-                        </h1>
-                        <p className='mb-4 lg:mb-6 text-center md:text-left text-black leading-relaxed'>
-                            Discover new horizons in education. The world of knowledge awaits; seize its opportunities now!
-                        </p>
-                        <div className='mt-4 space-y-3'>
-                            {listToggleP.map((item, index) => (
-                                <ToggleP
-                                    title={item.title}
-                                    description={item.description}
-                                    key={index}
-                                    py={4}
-                                />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Image on the right */}
-                    <div className='relative md:w-1/2 flex justify-center items-center mt-6 md:mt-0'>
-                        <div className='w-full h-full max-w-xs md:max-w-none'>
-                            <img
-                                src={image_2}
-                                alt="Educational Image"
-                                className="h-64 md:h-auto w-auto mx-auto object-cover"
-                            />
-                        </div>
-                    </div>
-                </div>
+              <div className="container mx-auto">
+              {/* Section 1: Image Left, Text Right */}
+              <div className='flex flex-col md:flex-row items-center justify-center py-10'>
+                  {/* Image on the left */}
+                  <div className='relative md:w-1/2 flex justify-center mb-8 md:mb-0'>
+                      <div className='w-full h-full max-w-md'>
+                          <img
+                              src={image_3} // Replace with your actual image source for the first section
+                              alt="Educational Platform"
+                              className="h-72 md:h-96 w-full object-cover rounded-lg shadow-lg"
+                          />
+                      </div>
+                  </div>
+  
+                  {/* Text on the right */}
+                  <div className='md:w-1/2 px-6 flex flex-col items-center md:items-start'>
+                      <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black text-center md:text-left'>
+                          Welcome to <span className='text-primary'>Que</span>zzy
+                      </h1>
+                      <p className='mb-6 text-base text-center md:text-left text-gray-700 leading-relaxed'>
+                          Transform your educational experience with innovative tools designed for teachers and students alike.
+                      </p>
+                      <div className='flex flex-col space-y-4'>
+                          {keyFeatures.map((feature, index) => (
+                              <ToggleP
+                                  title={feature.title}
+                                  description={feature.description}
+                                  key={index}
+                                  py={4}
+                              />
+                          ))}
+                      </div>
+                  </div>
+              </div>
+  
+              {/* Section 2: Text Left, Image Right */}
+              <div className='flex flex-col md:flex-row items-center justify-center mt-10 pb-40'> {/* Added padding bottom here */}
+                  {/* Text on the left */}
+                  <div className='md:w-1/2 px-6 flex flex-col items-center md:items-start'>
+                      <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black text-center md:text-left'>
+                          Explore New Horizons with <span className='text-primary'>Que</span>zzy
+                      </h1>
+                      <p className='mb-6 text-base text-center md:text-left text-gray-700 leading-relaxed'>
+                          Join us in revolutionizing the way knowledge is shared and accessed in today's educational landscape.
+                      </p>
+                      <div className='flex flex-col space-y-4'>
+                          {listToggleP.map((item, index) => (
+                              <ToggleP
+                                  title={item.title}
+                                  description={item.description}
+                                  key={index}
+                                  py={4}
+                              />
+                          ))}
+                      </div>
+                  </div>
+  
+                  {/* Image on the right */}
+                  <div className='relative md:w-1/2 flex justify-center mt-8 md:mt-0'>
+                      <div className='w-full h-full max-w-md '> {/* Custom red shadow */}
+                          <img
+                              src={image_2} // Use your actual image source for the second section
+                              alt="Educational Innovation"
+                              className="h-72 md:h-96 w-full object-cover rounded-lg shadow-lg"
+                          />
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
 
                 <div>
                     <CardSection />
                 </div>
                 <div>
                     <QuizCategories />
-                    <EmailCard />
+                    
+                </div>
+                <div>
+                <AppDownloadSection/>
+                <EmailCard />
                 </div>
                 
                 <div>
