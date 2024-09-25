@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getSettings, updateSettings } from '../api/setting';
 import { IUser } from '../types/userType';
+import profile_image from "../assets/images/profile.png";
 
 const Setting = () => {
     const [settings, setSettngs] = useState<IUser | null>(null);
@@ -98,7 +99,11 @@ const Setting = () => {
 
             <div className="bg-white rounded-lg shadow-lg p-6 mt-4 grid grid-cols-3 gap-4">
                 <div className="flex flex-col items-start">
-                    <div className="bg-gray-300 rounded-full h-48 w-48"></div> 
+                <img
+                                src={profile_image} // Replace with the actual image URL
+                                alt={'s profile'}
+                                className="bg-gray-300 rounded-full h-48 w-48"
+                                />
                     {/* Profile Image Placeholder */}
                     <p className="font-bold mt-2">{username}</p>
                     <p>{profileType}</p>
@@ -121,42 +126,42 @@ const Setting = () => {
                         <p>{level}</p>
                     )}
                   <p className="font-bold mt-4">Profile Type</p>
-{editing && (profileType === "Company" || profileType === "Teacher") ? (
-    <select
-        value={profileType}
-        onChange={(e) => setProfileType(e.target.value)}
-        className="border p-2 rounded-lg w-full"
-    >
-        {profileTypes.map((type) => (
+            {editing && (profileType === "Company" || profileType === "Teacher") ? (
+        <select
+            value={profileType}
+            onChange={(e) => setProfileType(e.target.value)}
+            className="border p-2 rounded-lg w-full"
+        >
+            {profileTypes.map((type) => (
             <option key={type} value={type}>{type}</option>
-        ))}
-    </select>
-) : (
-    <p>{profileType}</p>
-)}
+         ))}
+         </select>
+        ) : (
+        <p>{profileType}</p>
+            )}
 
                     <p className="font-bold mt-4">Address</p>
-{editing ? (
-    <input
+        {editing ? (
+        <input
         type="text"
         value={address}
         onChange={(e) => setAddress(e.target.value)}
         className="border p-2 rounded-lg w-full"
-    />
-) : (
-    <p>{address || 'N/A'}</p>  // If address is empty, display 'N/A'
-)}
- <p className="font-bold mt-4">Web site</p>
-{editing ? (
-    <input
+        />
+        ) : (
+        <p>{address || 'N/A'}</p>  // If address is empty, display 'N/A'
+        )}
+        <p className="font-bold mt-4">Web site</p>
+        {editing ? (
+        <input
         type="text"
         value={website}
         onChange={(e) => setWebsite(e.target.value)}
         className="border p-2 rounded-lg w-full"
-    />
-) : (
-    <p>{website || 'N/A'}</p>  // If address is empty, display 'N/A'
-)}
+    />  
+        ) : (
+            <p>{website || 'N/A'}</p>  // If address is empty, display 'N/A'
+        )}
                 </div>
 
                 <div>

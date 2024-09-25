@@ -21,7 +21,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.6.2",
     "mongoose": "^8.4.0",
-    "winston": "^3.13.0"
+    "winston": "^3.13.0",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
