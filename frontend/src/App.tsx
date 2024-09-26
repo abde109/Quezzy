@@ -11,7 +11,7 @@ import ListQuiz from './pages/ListQuiz';
 import ListedQuiz from './pages/ListedQuiz';
 import LoginPage from './pages/LoginPage';
 import NotFound from './pages/NotFound';
-import ProfileAdmin from './pages/ProfileAdmin';
+import Profile from './pages/Profile';
 import QuizzesPage from './pages/QuizzesPage';
 import RegisterPage from './pages/RegisterPage';
 import Settings from './pages/Settings';
@@ -50,13 +50,21 @@ const App: React.FC = () => {
           <Route path="/Quizzes" element={<QuizzesPage />} />
           <Route path="/register" element={!userState.isAuth ? <RegisterPage /> : <Navigate to="/" />} />
           <Route path="/dashboard" element={userState.role === "user" ? <UserDashboard /> : <AdminDashboard />} />
-          <Route path="/list" element={userState.role === "admin" ? <ListQuiz />  : <NotFound /> } />
-          <Route path="/list/:quizId" element={userState.role === "admin" ? <ListQuiz /> : <NotFound /> } />
-          <Route path="/listed" element={userState.role === "admin" ? <ListedQuiz /> : <NotFound /> } />
-          <Route path="/listed/:quizId" element={userState.role === "admin" ? <ListedQuiz /> : <NotFound />  } />
-          <Route path="/settings" element={userState.role === "user" ? <NotFound /> : <Settings />} />
-          <Route path="/Profile" element={userState.role === "admin" ? <ProfileAdmin /> : <NotFound /> } />
+          <Route path="/list" element={userState.role === "user" ? <NotFound /> : <ListQuiz />} />
+          <Route path="/list/:quizId" element={userState.role === "user" ? <NotFound /> : <ListQuiz />} />
+          <Route path="/listed" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
+          <Route path="/listed/:quizId" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
+          <Route 
+    path="/settings" 
+    element={userState.isAuth ? <Settings /> : <Navigate to="/login" />} 
+/>
+<Route 
+    path="/profile" 
+    element={userState.isAuth ? <Profile /> : <Navigate to="/login" />} 
+/>
+
         </Routes>
+
       </div>
     </Router>
   );
