@@ -4,14 +4,14 @@ import SportsMartialArtsOutlinedIcon from '@mui/icons-material/SportsMartialArts
 import image_1 from "../assets/images/image_1.svg";
 import image_2 from "../assets/images/image_2.svg";
 import image_3 from "../assets/images/image_3.svg";
+import AppDownloadSection from '../components/AppDownloadSection';
+import CardSection from '../components/CardSection';
+import EmailCard from '../components/EmailCard';
+import Footer from '../components/Footer';
 import PrimaryButton from "../components/PrimaryButton";
+import QuizCategories from '../components/QuizCategories';
 import RedCard from "../components/RedCard";
 import ToggleP from '../components/ToggleP';
-import CardSection from '../components/CardSection';
-import Footer from '../components/Footer';
-import EmailCard from '../components/EmailCard';
-import QuizCategories from '../components/QuizCategories';
-import AppDownloadSection from '../components/AppDownloadSection';
 
 const LandingPage = () => {
     const listcard = [
@@ -69,13 +69,13 @@ const LandingPage = () => {
                     {/* Left Section */}
                     <div className="md:w-1/2 flex justify-center mt-0 md:mt-8 lg:mt-16 lg:ml-24">
                         <div className="w-full px-4 md:px-8 lg:px-12">
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold animate-fadeInUp leading-tight">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold leading-tight">
                                 Unlock Your Professional and Educational Potential with <span className="text-primary">Que</span>zzy
                             </h1>
-                            <p className="text-sm md:text-base font-mono font-normal mt-4 mb-6 md:mb-10 lg:mb-12 w-full md:w-2/3 animate-fadeInUp leading-relaxed">
+                            <p className="text-sm md:text-base font-mono font-normal mt-4 mb-6 md:mb-10 lg:mb-12 w-full md:w-2/3 leading-relaxed">
                                 Quezzy is a versatile tool for creating and managing quizzes and exams, ideal for educators, companies, and individuals preparing for job interviews or skill assessments.
                             </p>
-                            <PrimaryButton label={"Join Us"} to={""} w='10' h='2' className="animate-fadeInUp text-lg md:text-xl lg:text-2xl" />
+                            <PrimaryButton label={"Join Us"} to={""} w='10' h='2' className="text-lg md:text-xl lg:text-2xl" />
                         </div>
                     </div>
                     {/* Right Section */}
@@ -84,19 +84,15 @@ const LandingPage = () => {
                             <img
                                 src={image_1}
                                 alt="Circular content"
-                                className="max-w-xs max-h-xs md:max-w-sm md:max-h-sm lg:max-w-md lg:max-h-md xl:max-w-lg xl:max-h-lg mx-auto animate-float"
+                                className="max-w-xs max-h-xs md:max-w-sm md:max-h-sm lg:max-w-md lg:max-h-md xl:max-w-lg xl:max-h-lg mx-auto"
                             />
                         </div>
                     </div>
                 </div>
-                
             </section>
-            <section>
-                
-            </section>
+
             <section className="bg-background bg-opacity-60 py-4 md:py-8 lg:py-20">
                 {/* Cards Section */}
-                
                 <div className='flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 lg:gap-40 md:p-8 lg:-translate-y-1/2 lg:transform lg:left-1/2'>
                     {listcard.map((card, index) => (
                         <RedCard
@@ -107,78 +103,84 @@ const LandingPage = () => {
                         />
                     ))}
                 </div>
-                
+
                 {/* Image Left - Text Right */}
-              <div className="container mx-auto">
-              {/* Section 1: Image Left, Text Right */}
-              <div className='flex flex-col md:flex-row items-center justify-center py-10'>
-                  {/* Image on the left */}
-                  <div className='relative md:w-1/2 flex justify-center mb-8 md:mb-0'>
-                      <div className='w-full h-full max-w-md'>
-                          <img
-                              src={image_3} // Replace with your actual image source for the first section
-                              alt="Educational Platform"
-                              className="h-72 md:h-96 w-full object-cover rounded-lg shadow-lg"
-                          />
-                      </div>
-                  </div>
-  
-                  {/* Text on the right */}
-                  <div className='md:w-1/2 px-6 flex flex-col items-center md:items-start'>
-                      <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black text-center md:text-left'>
-                          Welcome to <span className='text-primary'>Que</span>zzy
-                      </h1>
-                      <p className='mb-6 text-base text-center md:text-left text-gray-700 leading-relaxed'>
-                          Transform your educational experience with innovative tools designed for teachers and students alike.
-                      </p>
-                      <div className='flex flex-col space-y-4'>
-                          {keyFeatures.map((feature, index) => (
-                              <ToggleP
-                                  title={feature.title}
-                                  description={feature.description}
-                                  key={index}
-                                  py={4}
-                              />
-                          ))}
-                      </div>
-                  </div>
-              </div>
-  
-              {/* Section 2: Text Left, Image Right */}
-              <div className='flex flex-col md:flex-row items-center justify-center mt-10 pb-40'> {/* Added padding bottom here */}
-                  {/* Text on the left */}
-                  <div className='md:w-1/2 px-6 flex flex-col items-center md:items-start'>
-                      <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black text-center md:text-left'>
-                          Explore New Horizons with <span className='text-primary'>Que</span>zzy
-                      </h1>
-                      <p className='mb-6 text-base text-center md:text-left text-gray-700 leading-relaxed'>
-                          Join us in revolutionizing the way knowledge is shared and accessed in today's educational landscape.
-                      </p>
-                      <div className='flex flex-col space-y-4'>
-                          {listToggleP.map((item, index) => (
-                              <ToggleP
-                                  title={item.title}
-                                  description={item.description}
-                                  key={index}
-                                  py={4}
-                              />
-                          ))}
-                      </div>
-                  </div>
-  
-                  {/* Image on the right */}
-                  <div className='relative md:w-1/2 flex justify-center mt-8 md:mt-0'>
-                      <div className='w-full h-full max-w-md '> {/* Custom red shadow */}
-                          <img
-                              src={image_2} // Use your actual image source for the second section
-                              alt="Educational Innovation"
-                              className="h-72 md:h-96 w-full object-cover rounded-lg shadow-lg"
-                          />
-                      </div>
-                  </div>
-              </div>
-          </div>
-      
+                <div className='flex flex-col md:flex-row items-center justify-center py-6 md:py-6 lg:py-10'>
+                    {/* Image on the left */}
+                    <div className='md:w-1/2 flex justify-center mb-6 md:mb-0'>
+                        <div className='w-full max-w-xs md:max-w-none'>
+                            <img
+                                src={image_3}
+                                alt="Educational Quiz Platform"
+                                className="h-64 md:h-auto w-auto mx-auto object-cover"
+                                style={{ height: '50rem' }}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Text on the right */}
+                    <div className='md:w-1/2 flex flex-col justify-center items-center md:items-start px-4 md:px-6 lg:px-8'>
+                        <h1 className='text-lg md:text-xl lg:text-2xl font-bold mb-4 text-center md:text-left text-black'>
+                            Elevate Your Learning with <span className='text-primary'>Que</span>zzy
+                        </h1>
+                        <p className='mb-4 lg:mb-6 text-center md:text-left text-black leading-relaxed'>
+                            Discover how Quezzy transforms education for teachers, students, companies, and candidates:
+                        </p>
+                        <div className='mt-4 space-y-3'>
+                            {keyFeatures.map((feature, index) => (
+                                <ToggleP
+                                    title={feature.title}
+                                    description={feature.description}
+                                    key={index}
+                                    py={4}
+                                   
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Text Left - Image Right */}
+                <div className='flex flex-col md:flex-row items-center justify-center py-6 md:py-6 lg:py-10'>
+                       <div className='md:w-1/2 flex flex-col justify-center items-center md:items-start md:px-6 lg:px-24 mb-6 md:mb-0'>
+                        <h1 className='text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-center md:text-left text-black'>
+                            Simplify your learning experience with <span className='text-primary'>Que</span>zzy
+                        </h1>
+                        <p className='mb-4 lg:mb-6 text-center md:text-left text-black leading-relaxed'>
+                            Discover new horizons in education. The world of knowledge awaits; seize its opportunities now!
+                        </p>
+                        <div className='mt-4 space-y-3 flex flex-col px-10'>
+                            {listToggleP.map((item, index) => (
+
+                             
+                                   
+                                <ToggleP
+                                    title={item.title}
+                                    description={item.description}
+                                    key={index}
+                                    py={4}
+                                />
+                                
+                                
+                            ))}
+                        </div>
+                    </div>
+                <div className='md:w-1/2 flex justify-center'>
+                        <div className='w-full max-w-xs md:max-w-none'>
+                            <img
+                                src={image_2}
+                                alt="Educational Image"
+                                className="md:h-auto w-auto mx-auto object-cover"
+                            style={{ height: '55rem' }}
+                            />
+                        </div>
+                    </div>
+                    {/* Text on the left */}
+                 
+
+                    {/* Image on the right */}
+                    
+                </div>
 
                 <div>
                     <CardSection />

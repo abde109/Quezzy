@@ -64,40 +64,79 @@ class CRUDService<T extends Document> {
     }
   }
   
-  
-async update(id: string, data: Partial<T>, req: Request): Promise<T | null> {
-  try {
-    console.log('Updating item with data:', data);
 
-    // Update the item in the database and return the updated item
-    const item = await this.model.findByIdAndUpdate(id, data, { new: true, runValidators: true });
+  async update(id: string, data: Partial<T>, req: Request): Promise<T | null> {
+    try {
+        console.log('Updating item with data:', data);
 
-    if (!item) {
-      console.log('Item not found:', id);
-      throw new Error('Item not found');
+        // Update the item in the database and return the updated item
+        const item = await this.model.findByIdAndUpdate(id, data, { new: true, runValidators: true });
+
+        if (!item) {
+            console.log('Item not found:', id);
+            throw new Error('Item not found');
+        }
+
+        // Log the item updated from the database
+        console.log('Item updated in DB:', item);
+
+        // Update session with the new item data
+        req.session.user = { ...req.session.user, ...item.toObject() }; // Spread the existing session data and merge with updated item
+
+        // Log the session before saving to verify
+        console.log('Session before saving:', req.session);
+
+        // Save the session to persist changes
+        await req.session.save((err) => {
+            if (err) {
+                console.error('Session save error:', err);
+            } else {
+                console.log('Session saved successfully:', req.session);
+            }
+        });
+
+        return item;
+    } catch (err) {
+        console.log('Error updating item:', err);
+        throw new Error('Error updating item');
     }
-
-    // Log the item updated from the database
-    console.log('Item updated in DB:', item);
-
-    // Update session with the new item data
-    req.session.user = item;
-    
-    // Log the session before saving to verify
-    console.log('Session before saving:', req.session);
-
-    // Save the session
-    // await req.session.save();
-
-    // Log the session after saving
-    console.log('Session after saving:', req.session);
-
-    return item;
-  } catch (err) {
-    console.log('Error updating item:', err);
-    throw new Error('Error updating item');
-  }
 }
+
+  
+// async update(id: string, data: Partial<T>, req: Request): Promise<T | null> {
+//   try {
+//     console.log('Updating item with data:', data);
+
+//     // Update the item in the database and return the updated item
+//     const item = await this.model.findByIdAndUpdate(id, data, { new: true, runValidators: true });
+
+//     if (!item) {
+//       console.log('Item not found:', id);
+//       throw new Error('Item not found');
+//     }
+
+//     // Log the item updated from the database
+//     console.log('Item updated in DB:', item);
+
+//     // Update session with the new item data
+//     req.session.user = item;
+    
+//     // Log the session before saving to verify
+//     console.log('Session before saving:', req.session);
+
+//     // Save the session
+//     // await req.session.save();
+
+//     // Log the session after saving
+//     console.log('Session after saving:', req.session);
+//     console.log('Session after saving:', req.body);
+
+//     return item;
+//   } catch (err) {
+//     console.log('Error updating item:', err);
+//     throw new Error('Error updating item');
+//   }
+// }
 
 
 
