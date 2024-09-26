@@ -4,6 +4,7 @@ import SportsMartialArtsOutlinedIcon from '@mui/icons-material/SportsMartialArts
 import image_1 from "../assets/images/image_1.svg";
 import image_2 from "../assets/images/image_2.svg";
 import image_3 from "../assets/images/image_3.svg";
+import AppDownloadSection from '../components/AppDownloadSection';
 import CardSection from '../components/CardSection';
 import EmailCard from '../components/EmailCard';
 import Footer from '../components/Footer';
