@@ -168,10 +168,16 @@ const ListQuiz: React.FC = () => {
                         setAlertMessage('Please fill in the title and description');
                         setAlertKey(prev => prev + 1);
                   } else if (!selectedOption?.trim() || !selectedOptionAnswer?.trim()) {
+                        
                         setAlertType('warning');
                         setAlertMessage('Please select the status of answers');
                         setAlertKey(prev => prev + 1);
-                  } else {
+                  } else if (Description.length < 30) {
+                              setAlertType('warning');
+                              setAlertMessage('mininum in the description is 30 caracter');
+                              setAlertKey(prev => prev + 1);
+                  }
+                  else {
                         const quizData = {
                               title: Title,
                               description: Description,
@@ -305,12 +311,12 @@ const ListQuiz: React.FC = () => {
 
       return (
             
-            <div className="bg-background flex flex-col px-40 gap-36 py-20 items-center">
+            <div className="bg-background flex flex-col px-40 gap-36 py-10 items-center">
                   <Alert key={alertKey} type={alertType} message={alertMessage} />
 
                   
                   <div className="w-full h-1/2 flex flex-col">
-                        <span className="font-bold px-6 py-4 text-xl">Create Quiz</span>
+                        <span className="font-medium px-6 py-4 text-xl text-primary">Create Quiz</span>
                         <div className=" bg-white rounded-xl flex flex-col py-10 px-10 gap-6">
                               <input 
                                     type="text"

@@ -24,9 +24,9 @@ const ListedQuiz = () => {
   }, [userState]);
 
  return (
-    <div className="bg-background flex flex-col py-20 px-40">
-      <h1 className="text-xl font-bold mb-6">Listed Quizzes</h1>
-      <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
+    <div className="bg-background flex flex-col py-10 px-16 w-full">
+      <h1 className="text-xl font-medium text-primary mb-6">Listed Quizzes</h1>
+      <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-2 w-full">
         {quizzes.map((quiz) => (
           <ListedQuizCard
             key={quiz._id}

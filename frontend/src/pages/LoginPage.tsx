@@ -37,6 +37,8 @@ const LoginPage = () => {
                 const user = await getUser(datauser);
                 navigate('/');
                 dispatch(initializeUser(user));
+                
+        
                 // const auth = await authUser()
                 // console.log(auth)
             

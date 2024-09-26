@@ -31,3 +31,8 @@ export const getQuizByCreator = async (userId: string) => {
   const response = await apiClient.get(`/quizzes/getQuizByCreator/${userId}`);
   return response.data;
 }
+
+export const deleteQuiz = async (quizId: string) => { 
+  const response = await apiClient.get(`/quizzes/deleteQuiz/${quizId}`);
+  return response.data;
+}

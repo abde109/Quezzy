@@ -3,6 +3,8 @@ import apiClient from ".";
 export const getSettings = async () => {
   try {
     const response = await apiClient.get("/settings");
+   console.log("------>", JSON.stringify(response.data, null, 2));
+    
     return response.data;
   } catch (err: any) {
     throw err;
