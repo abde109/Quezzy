@@ -9,6 +9,9 @@
             "editor.wordHighlightBorder": "#FFD700",
             "editor.selectionHighlightBorder": "#A9A9A9",
             "editor.lineHighlightBackground": "#1073cf2d",
-            "editor.lineHighlightBorder": "#9fced11f"
+            "editor.lineHighlightBorder": "#9fced11f",
+            "activityBar.background": "#561236",
+            "titleBar.activeBackground": "#79194C",
+            "titleBar.activeForeground": "#FEFCFD"
       }
 }

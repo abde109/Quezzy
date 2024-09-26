@@ -16,7 +16,6 @@ import QuizPage from './pages/QuizPage';
 import QuizzesPage from './pages/QuizzesPage';
 import RegisterPage from './pages/RegisterPage';
 import Settings from './pages/Settings';
-import UserDashboard from './pages/UserDashboard';
 import { useAppDispatch } from './store';
 import { initializeUser } from './store/features/userSlice';
 
@@ -50,12 +49,12 @@ const App: React.FC = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/Quizzes" element={<QuizzesPage />} />
           <Route path="/register" element={!userState.isAuth ? <RegisterPage /> : <Navigate to="/" />} />
-          <Route path="/dashboard" element={userState.role === "user" ? <UserDashboard /> : <AdminDashboard />} />
+          <Route path="/dashboard" element={userState.role === "admin" ? <AdminDashboard /> : <NotFound />} />
           <Route path="/list" element={userState.role === "user" ? <NotFound /> : <ListQuiz />} />
           <Route path="/list/:quizId" element={userState.role === "user" ? <NotFound /> : <ListQuiz />} />
           <Route path="/listed" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
           <Route path="/listed/:quizId" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
-            <Route path="/quiz/:quizId" element={userState.role === "user" ? <NotFound /> : <QuizPage />} />
+            <Route path="/quiz/:quizId" element={userState.role === "user" ? <QuizPage /> : <QuizPage />} />
           <Route 
     path="/settings" 
     element={userState.isAuth ? <Settings /> : <Navigate to="/login" />} 
@@ -63,7 +62,8 @@ const App: React.FC = () => {
 <Route 
     path="/profile" 
     element={userState.isAuth ? <Profile /> : <Navigate to="/login" />} 
-/>
+          />
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
 
