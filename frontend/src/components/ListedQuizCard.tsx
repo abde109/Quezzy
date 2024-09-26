@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { IQuiz } from '../api/IQuizApi';
+import { useNavigate } from 'react-router-dom';
+import apiClient from '../api';
+import { getQuizById, IQuiz } from '../api/IQuizApi';
 
-const ListedQuizCard: React.FC<IQuiz> = ({ title, description, isPublic, createdAt, showAnswers }) => {
+const ListedQuizCard: React.FC<IQuiz> = ({ _id,title, description, isPublic, createdAt, showAnswers }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+ const navigate = useNavigate();
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -12,8 +14,22 @@ const ListedQuizCard: React.FC<IQuiz> = ({ title, description, isPublic, created
     setDropdownOpen(false);
   };
 
+  const handleEdit = async () => { 
+    closeDropdown();
+    const quizReq = await getQuizById(_id);
+    navigate(`/list/${quizReq._id}`);
+
+  }
+
+  const handleDelete = async () => { 
+    closeDropdown();
+    // navigate(`/deleteQuiz/${_id}`);
+    await apiClient.get(`/quizzes/deleteQuiz/${_id}`);
+    window.location.reload();
+  }
+
   return (
-    <div className="w-full flex flex-col justify-center items-center bg-background px-10 py-20">
+    <div className="w-full flex flex-col justify-center items-center bg-background py-10">
       <div className="relative w-full max-w-sm">
         <div className="border px-6 py-8 bg-white rounded-lg w-full">
           <h2 className="text-lg font-bold text-red-500 mb-2">{title}</h2>
@@ -35,9 +51,9 @@ const ListedQuizCard: React.FC<IQuiz> = ({ title, description, isPublic, created
             </button>
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-32 bg-white border rounded shadow-md">
-                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={closeDropdown}>Edit</a>
+                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={() => handleEdit()}>Edit</a>
                 <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={closeDropdown}>Invite</a>
-                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={closeDropdown}>Delete</a>
+                <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={() => handleDelete()}>Delete</a>
                 <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200" onClick={closeDropdown}>Preview</a>
               </div>
             )}

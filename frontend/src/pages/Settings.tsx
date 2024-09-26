@@ -4,13 +4,13 @@ import { IUser } from '../types/userType';
 
 const Setting = () => {
     const [settings, setSettings] = useState<IUser | null>(null);
-    const [username, setUsername] = useState<string>('');
-    const [gmail, setGmail] = useState<string>('');
-    const [profileType, setProfileType] = useState<string>('');
-    const [about, setAbout] = useState<string>('Hello! I’m a passionate learner and educator.');
-    const [website, setWebsite] = useState<string>('');
-    const [address, setAddress] = useState<string>('123 Main St, City, Country');
-    const [dateOfBirth, setDateOfBirth] = useState<string>('1990-01-01');
+    const [username, setUsername] = useState<string>();
+    const [gmail, setGmail] = useState<string>();
+    const [profileType, setProfileType] = useState<string>();
+    const [about, setAbout] = useState<string>();
+    const [website, setWebsite] = useState<string>();
+    const [address, setAddress] = useState<string>();
+const [dateOfBirth, setDateOfBirth] = useState<string>();
     const [socialLinks, setSocialLinks] = useState({
         facebook: 'https://facebook.com/',
         twitter: 'https://twitter.com/',
@@ -25,21 +25,25 @@ const Setting = () => {
             try {
                 const response = await getSettings();
                 const user = response.user;
-                setSettings(user);
-                setUsername(user.username || '');
-                setGmail(user.email || '');
-                setProfileType(user.profileType || '');
-                setAbout(user.about || about);
-                setWebsite(user.website || '');
-                setAddress(user.address || address);
-                setDateOfBirth(user.dateOfBirth || dateOfBirth);
-                setSocialLinks(user.socialLinks || socialLinks);
-                setLevel(user.level || 'Beginner');
+                console.log("------------->"+user.about);
+                
+                setSettings(user ? user : '');
+                setUsername(user.username  ? user.username : '');
+                setGmail(user.email ? user.email : '');
+                setProfileType(user.profileType ? user.profileType : '');
+                setAbout(user.about ? user.about : '');
+                setWebsite(user.website ? user.website : '');
+                setAddress(user.address ? user.address : '');
+                setDateOfBirth(user.dateOfBirth ? user.dateOfBirth : '');
+                setSocialLinks(user.socialLinks ? user.socialLinks : '');
+                setLevel(user.level);
             } catch (err) {
                 console.error(err);
                 setError('Failed to fetch settings.');
             }
         };
+      
+        
         fetchSettings();
     }, []);
 

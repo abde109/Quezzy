@@ -11,7 +11,7 @@ const ToggleP: React.FC<{ title: string, description: string , py:number }> = ({
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
             transition={{ duration: 0.5 }}
             className={`flex flex-row py-${py}`}

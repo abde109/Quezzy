@@ -4,13 +4,13 @@ import SportsMartialArtsOutlinedIcon from '@mui/icons-material/SportsMartialArts
 import image_1 from "../assets/images/image_1.svg";
 import image_2 from "../assets/images/image_2.svg";
 import image_3 from "../assets/images/image_3.svg";
+import CardSection from '../components/CardSection';
+import EmailCard from '../components/EmailCard';
+import Footer from '../components/Footer';
 import PrimaryButton from "../components/PrimaryButton";
+import QuizCategories from '../components/QuizCategories';
 import RedCard from "../components/RedCard";
 import ToggleP from '../components/ToggleP';
-import CardSection from '../components/CardSection';
-import Footer from '../components/Footer';
-import EmailCard from '../components/EmailCard';
-import QuizCategories from '../components/QuizCategories';
 
 const LandingPage = () => {
     const listcard = [
@@ -112,6 +112,7 @@ const LandingPage = () => {
                                 src={image_3}
                                 alt="Educational Quiz Platform"
                                 className="h-64 md:h-auto w-auto mx-auto object-cover"
+                                style={{ height: '50rem' }}
                             />
                         </div>
                     </div>
@@ -131,6 +132,7 @@ const LandingPage = () => {
                                     description={feature.description}
                                     key={index}
                                     py={4}
+                                   
                                 />
                             ))}
                         </div>
@@ -139,34 +141,41 @@ const LandingPage = () => {
 
                 {/* Text Left - Image Right */}
                 <div className='flex flex-col md:flex-row items-center justify-center py-6 md:py-6 lg:py-10'>
-                <div className='md:w-1/2 flex justify-center'>
-                        <div className='w-full max-w-xs md:max-w-none'>
-                            <img
-                                src={image_2}
-                                alt="Educational Image"
-                                className="h-64 md:h-auto w-auto mx-auto object-cover"
-                            />
-                        </div>
-                    </div>
-                    {/* Text on the left */}
-                    <div className='md:w-1/2 flex flex-col justify-center items-center md:items-start px-4 md:px-6 lg:px-8 mb-6 md:mb-0'>
+                       <div className='md:w-1/2 flex flex-col justify-center items-center md:items-start md:px-6 lg:px-24 mb-6 md:mb-0'>
                         <h1 className='text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-center md:text-left text-black'>
                             Simplify your learning experience with <span className='text-primary'>Que</span>zzy
                         </h1>
                         <p className='mb-4 lg:mb-6 text-center md:text-left text-black leading-relaxed'>
                             Discover new horizons in education. The world of knowledge awaits; seize its opportunities now!
                         </p>
-                        <div className='mt-4 space-y-3'>
+                        <div className='mt-4 space-y-3 flex flex-col px-10'>
                             {listToggleP.map((item, index) => (
+
+                             
+                                   
                                 <ToggleP
                                     title={item.title}
                                     description={item.description}
                                     key={index}
                                     py={4}
                                 />
+                                
+                                
                             ))}
                         </div>
                     </div>
+                <div className='md:w-1/2 flex justify-center'>
+                        <div className='w-full max-w-xs md:max-w-none'>
+                            <img
+                                src={image_2}
+                                alt="Educational Image"
+                                className="md:h-auto w-auto mx-auto object-cover"
+                            style={{ height: '55rem' }}
+                            />
+                        </div>
+                    </div>
+                    {/* Text on the left */}
+                 
 
                     {/* Image on the right */}
                     
