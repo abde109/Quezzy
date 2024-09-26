@@ -48,3 +48,14 @@ export const deleteUsers = async (req:Request, res:Response) => {
         res.status(500).json({ error: err.message });
     }
 }
+
+export const getUsersByIds = async (req: Request, res: Response) => {
+  try {
+    const ids = req.query.ids as string; // Expecting IDs as a comma-separated string
+    const userIds = ids.split(','); // Split the comma-separated string into an array
+    const users = await userService.getManyBy({ _id: { $in: userIds } }); // Fetch users with those IDs
+    res.status(200).json(users);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+};

@@ -1,6 +1,5 @@
-import React from 'react';
-import googlePlayIcon from "../assets/images/google-play.png";
 import appleStoreIcon from "../assets/images/apple-store.png";
+import googlePlayIcon from "../assets/images/google-play.png";
 import phoneImage from "../assets/images/your-phone-image.png";
 // Update with actual path
 

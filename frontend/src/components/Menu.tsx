@@ -18,7 +18,7 @@ const Menu: React.FC<{}> = () => {
                         <ul className='flex space-y-10 cursor-pointer font-bold flex-col'>
                             <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => nav('/')}>Home</li>
                             <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => nav('Quizzes')}> Quizzes </li>
-                            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => nav('Leaderboards')}>Leaderboards</li>
+                            {/* <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => nav('Leaderboards')}>Leaderboards</li> */}
                         </ul>
                     </div>
 

@@ -22,11 +22,12 @@ const MenuProfile:React.FC<{isOpen:boolean}> = ({isOpen}) => {
   }
 
 
-  const menu = [ {name:'Profile' , to:'Profile' , icon : <PersonOutlineOutlinedIcon />},
-                 {name:'Dashboard' , to:'dashboard' , icon : <SpaceDashboardOutlinedIcon />},
-                 {name:'Settings' , to:'settings' , icon : <SettingsOutlinedIcon />},
-                 {name:'Logout' , to:'/' , icon : <LogoutOutlinedIcon /> , onClick:handleLogOut}
-                ];
+const menu = [
+  { name: 'Profile', to: 'Profile', icon: <PersonOutlineOutlinedIcon /> },
+  ...(userState.role === 'admin' ? [{ name: 'Dashboard', to: 'dashboard', icon: <SpaceDashboardOutlinedIcon /> }] : []),
+  { name: 'Settings', to: 'settings', icon: <SettingsOutlinedIcon /> },
+  { name: 'Logout', to: '/', icon: <LogoutOutlinedIcon />, onClick: handleLogOut },
+];
 
   return (
     <Menu as="div" className="relative top-12">

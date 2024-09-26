@@ -31,7 +31,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({ isOpen, onClose }) => {
               <ul className="space-y-4 w-full text-lg">
                 <li className="cursor-pointer font-bold no-underline hover:underline hover:skew-y-3 hover:text-primary" onClick={() => handleNavClick('/')}>Home</li>
                 <li className="cursor-pointer font-bold no-underline hover:underline hover:skew-y-3 hover:text-primary" onClick={() => handleNavClick('Quizzes')}>Quizzes</li>
-                <li className="cursor-pointer font-bold no-underline hover:underline hover:skew-y-3 hover:text-primary" onClick={() => handleNavClick('Leaderboards')}>Leaderboards</li>
+                {/* <li className="cursor-pointer font-bold no-underline hover:underline hover:skew-y-3 hover:text-primary" onClick={() => handleNavClick('Leaderboards')}>Leaderboards</li> */}
                 
                 {/* <li className="cursor-pointer font-bold no-underline hover:underline hover:skew-y-3 hover:text-primary" onClick={() => handleNavClick('login')}>Sign In</li> */}
                 {/* <li className="cursor-pointer font-bold no-underline hover:underline hover:skew-y-3 hover:text-primary" onClick={() => handleNavClick('register')}>Sign Up</li> */}

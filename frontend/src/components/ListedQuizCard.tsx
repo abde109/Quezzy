@@ -31,12 +31,15 @@ const ListedQuizCard: React.FC<IQuiz> = ({ _id,title, description, isPublic, cre
   return (
     <div className="w-full flex flex-col justify-center items-center bg-background py-10">
       <div className="relative w-full max-w-sm">
-        <div className="border px-6 py-8 bg-white rounded-lg w-full">
-          <h2 className="text-lg font-bold text-red-500 mb-2">{title}</h2>
-          <p className="text-gray-700 mb-4"><strong>Description : </strong>{description}</p>
-          <p className="text-gray-600 mb-4"><strong>Type : </strong>{isPublic ? "Public" : "Private"}</p>
-          <p className="text-gray-600 mb-4"><strong>Mode : </strong>:{showAnswers}</p>
-          <p className="text-gray-600"> <strong>Date of Creation : </strong> {new Date(createdAt).toLocaleDateString()}</p>
+                <div className="border px-6 py-8 bg-white rounded-lg w-full overflow-hidden">
+          <h2 className="text-lg font-bold text-red-500 mb-2 truncate">{title}</h2>
+          <p className="text-gray-700 mb-4" style={{ whiteSpace: 'pre-line', overflowWrap: 'break-word' }}>
+            <strong>Description : </strong>{description}
+          </p>
+
+          <p className="text-gray-600 mb-4 truncate "><strong>Type : </strong>{isPublic ? "Public" : "Private"}</p>
+          <p className="text-gray-600 mb-4 "><strong>Mode : </strong>{showAnswers}</p>
+          <p className="text-gray-600 truncate"><strong>Date of Creation : </strong>{new Date(createdAt).toLocaleDateString()}</p>
         </div>
         <div className="absolute -inset-2 border-r-8 border-b-8 border-primary rounded-lg top-2 left-2 pointer-events-none"></div>
         <div className="absolute top-2 right-2">

@@ -49,7 +49,7 @@ const Header: React.FC = () => {
       <ul className='flex space-x-5 cursor-pointer font-bold'>
             <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('/')}>Home</li>
             <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('Quizzes')}> Quizzes </li>
-            <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('Leaderboards')}>Leaderboards</li>
+            {/* <li className='no-underline hover:underline hover:skew-y-3 hover:text-primary' onClick={() => handleNavClick('Leaderboards')}>Leaderboards</li> */}
           </ul>
     )
   }
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <header className="sticky top-0 z-50 flex justify-between border-b border-t-slate-600 bg-white bg-opacity-85 backdrop-blur-md hidden md:flex">
+      <header className="sticky top-0 z-50 flex justify-between border-b border-t-slate-600 bg-white bg-opacity-85 backdrop-blur-md  md:flex">
         <h1 className="font-sans font-bold ml-5 md:ml-20 mt-5 mb-5 text-3xl"><span className="text-primary ">Que</span>zzy</h1>
         <nav className="flex items-center">
           {handleHeader()}

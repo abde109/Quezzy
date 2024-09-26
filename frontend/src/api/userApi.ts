@@ -1,3 +1,4 @@
+import { User } from '../types/types';
 import apiClient from './index';
 
 export const createUser = async (userData: any) => {
@@ -36,3 +37,11 @@ export const logoutUser = async () => {
         throw err
     }
 }
+
+
+export const getUsersByIds = async (userIds: string[]): Promise<User[]> => {
+  const response = await apiClient.get(`/users/byIds`, {
+    params: { ids: userIds.join(',') }, // Pass user IDs as query parameter
+  });
+  return response.data;
+};

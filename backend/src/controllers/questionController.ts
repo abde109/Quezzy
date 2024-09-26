@@ -31,3 +31,12 @@ export const getQuestionsByQuizId = async (req: Request, res: Response) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+export const deleteQuestionById = async (req: Request, res: Response) => {
+      try {
+      const question = await questionService.delete(req.params.id);
+      res.status(200).json(question);
+      } catch (err: any) {
+      res.status(500).json({ error: err.message });
+      }
+      }

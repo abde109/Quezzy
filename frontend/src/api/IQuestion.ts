@@ -28,3 +28,12 @@ export const getQuestions = async (quizId: string) => {
     throw err
   }
 }
+
+export const deleteQuestion = async (questionId: string) => {
+  try {
+    const response = await apiClient.delete(`/question/delete/${questionId}`);
+    return response.data
+  } catch (err) {
+    throw err
+  }
+}

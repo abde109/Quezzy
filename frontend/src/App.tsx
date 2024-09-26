@@ -12,6 +12,7 @@ import ListedQuiz from './pages/ListedQuiz';
 import LoginPage from './pages/LoginPage';
 import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
+import QuizPage from './pages/QuizPage';
 import QuizzesPage from './pages/QuizzesPage';
 import RegisterPage from './pages/RegisterPage';
 import Settings from './pages/Settings';
@@ -54,6 +55,7 @@ const App: React.FC = () => {
           <Route path="/list/:quizId" element={userState.role === "user" ? <NotFound /> : <ListQuiz />} />
           <Route path="/listed" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
           <Route path="/listed/:quizId" element={userState.role === "user" ? <NotFound /> : <ListedQuiz />} />
+            <Route path="/quiz/:quizId" element={userState.role === "user" ? <NotFound /> : <QuizPage />} />
           <Route 
     path="/settings" 
     element={userState.isAuth ? <Settings /> : <Navigate to="/login" />} 

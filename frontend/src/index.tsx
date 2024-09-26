@@ -6,6 +6,7 @@ import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
+import './styles/global.css';
 
 const theme = createTheme({
   palette: {

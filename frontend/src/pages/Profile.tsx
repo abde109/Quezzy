@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getUser } from '../api/profile'; // Adjust the import path as needed
-import { IProfile } from '../types/profileType'; // Adjust the path to your type file
-import QuizDo from '../components/QuizDo'; // Import your QuizDo component
-import QuizActivityDashboard from '../components/QuizActivityDashboard'; // Import the new dashboard component
 import profile_image from "../assets/images/profile.png";
+import QuizActivityDashboard from '../components/QuizActivityDashboard'; // Import the new dashboard component
+import QuizDo from '../components/QuizDo'; // Import your QuizDo component
+import { IProfile } from '../types/profileType'; // Adjust the path to your type file
 
 const Profile: React.FC = () => {
     const [profile, setProfile] = useState<IProfile | null>(null);

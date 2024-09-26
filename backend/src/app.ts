@@ -4,11 +4,12 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import session from 'express-session';
+import profileRoutes from './routes/profileRoutes'; // Ensure this matches your actual file name
 import questionRoutes from './routes/questionRoutes';
 import quizRoutes from './routes/quizRoutes';
 import settingsRoutes from './routes/settingsRoute';
-import profileRoutes from './routes/profileRoutes'; // Ensure this matches your actual file name
 
+import quizCompletionRoutes from './routes/quizCompletionRoutes';
 import userRoutes from './routes/userRoutes';
 import connectDB from './utils/database';
 
@@ -46,6 +47,7 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/question', questionRoutes);
-app.use('/api/settings' , settingsRoutes);
+app.use('/api/settings', settingsRoutes);
+app.use('/api/quizCompletions', quizCompletionRoutes);
 
 export default app;

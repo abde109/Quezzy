@@ -1,4 +1,5 @@
 import apiClient from ".";
+import { Question, Quiz } from "../types/types";
 
 export interface IQuiz {
   _id: string;
@@ -36,3 +37,19 @@ export const deleteQuiz = async (quizId: string) => {
   const response = await apiClient.get(`/quizzes/deleteQuiz/${quizId}`);
   return response.data;
 }
+
+export const getTestById = async (quizId: string): Promise<Quiz> => {
+  const response = await apiClient.get(`/quizzes/${quizId}`);
+  return response.data;
+};
+
+// Fetch questions by quiz ID
+export const getQuestionsByQuizId = async (quizId: string): Promise<Question[]> => {
+  const response = await apiClient.get(`/question/questions/${quizId}`);
+  return response.data;
+};
+
+export const getAllQuizzes = async (): Promise<Quiz[]> => {
+  const response = await await apiClient.get(`/quizzes/getQuizs`);
+  return response.data;
+};

@@ -1,16 +1,17 @@
 import express from 'express';
-import { createUser, deleteUsers, getUser, getUsers } from '../controllers/userController';
+import { createUser, deleteUsers, getUser, getUsers, getUsersByIds } from '../controllers/userController';
 import { authenticate, authorize, validateUserData } from '../middlewares/userMiddleware';
 
 
 
 const userRoutes = express();
 
-userRoutes.get('/',getUsers)
+userRoutes.get('/users',getUsers)
 userRoutes.post('/',validateUserData ,createUser);
 userRoutes.get('/clear', deleteUsers);
 userRoutes.post('/login' ,authorize ,getUser);
 userRoutes.get('/auth', authenticate)
+userRoutes.get('/byIds', getUsersByIds);
 userRoutes.get('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
